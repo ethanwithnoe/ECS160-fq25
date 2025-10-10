@@ -1,5 +1,7 @@
 
 .env
+createdFiles.lst
+inputFiles.lst
 
 # Compiled class file
 *.class
