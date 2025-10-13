@@ -30,5 +30,12 @@ public class Issue {
     public String getUpdatedAt() {
         return updatedAt;
     }
+    //HOw to connect with them?
+    /*
+     * create an issue using the gson pasring
+     * add the issue to the relevant repo
+     * 
+     * 
+     */
 
 }
