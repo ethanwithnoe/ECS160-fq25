@@ -3,12 +3,17 @@ package com.ecs160.hw.model;
 public class Owner {
     private String login;
     private int id;
-    private String htmlUrl;
+    private String html_url;
     private boolean siteAdmin;
-    public Owner(String login, int id, String htmlUrl, boolean siteAdmin) {
+    
+    public Owner(String login) {
+        this.login = login;
+    }
+        
+    public Owner(String login, int id, String html_url, boolean siteAdmin) {
         this.login = login;
         this.id = id;
-        this.htmlUrl = htmlUrl;
+        this.html_url = html_url;
         this.siteAdmin = siteAdmin;
     }
     public String getLogin() {
@@ -18,7 +23,7 @@ public class Owner {
         return id;
     }
     public String getHtmlUrl() {
-        return htmlUrl;
+        return html_url;
     }
     public boolean isSiteAdmin() {
         return siteAdmin;

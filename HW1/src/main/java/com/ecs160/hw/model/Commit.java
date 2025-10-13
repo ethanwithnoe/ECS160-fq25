@@ -10,4 +10,5 @@ public class Commit {
     public String getCommitUrl() {
         return commit_url;
     }
-}
+}// TODO add all the relvant commit fields for pasing
+

@@ -5,26 +5,28 @@ import java.util.List;
 
 public class Repo {
     private String name;
-    private String ownerLogin;
-    private String htmlUrl;
-    private int forksCount;
+    private Owner owner; 
+    private String html_url;
+    private int forks;
     private String language;
-    private int openIssuesCount;
-    private List<Repo> forks;
+    private int open_issues_count;
+    private List<Repo> forksList;
     private List<Commit> recentCommits;
     private List<Issue> issues;
-    private int commitCount;
+    private int commitCount; //do we need this we need to calcualte later at some point
+    //TODO add some commit html and issue html
 
-    public Repo(String name, String ownerLogin, String htmlUrl, int forksCount, String language, int openIssuesCount) {
+
+    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount) {
         this.name = name;
-        this.ownerLogin = ownerLogin;
-        this.htmlUrl = htmlUrl;
-        this.forksCount = forksCount;
+        this.owner = new Owner(ownerLogin);
+        this.html_url = html_url;
+        this.forks = forks;
         this.language = language;
-        this.openIssuesCount = openIssuesCount;
-        this.forks = new ArrayList<>();
-        this.recentCommits = new ArrayList<>();
-        this.issues = new ArrayList<>();
+        this.open_issues_count = openIssuesCount;
+        this.forksList = new ArrayList<>();
+        this.recentCommits = new ArrayList<>(50);
+        this.issues = new ArrayList<>(10);
         this.commitCount = 0;
     }
 
@@ -32,22 +34,22 @@ public class Repo {
         return name;
     }   
     public String getOwnerLogin() {
-        return ownerLogin;
+        return owner.getLogin();
     }
     public String getHtmlUrl() {
-        return htmlUrl;
+        return html_url;
     }
-    public int getForksCount() {
-        return forksCount;
+    public int getForks() {
+        return forks;
     }
     public String getLanguage() {
         return language;
     }
     public int getOpenIssuesCount() {
-        return openIssuesCount;
+        return open_issues_count;
     }
-    public List<Repo> getForks() {
-        return forks;
+    public List<Repo> getForksList() {
+        return forksList;
     }
     public List<Commit> getRecentCommits() {
         return recentCommits;
@@ -62,7 +64,7 @@ public class Repo {
         this.commitCount = commitCount;
     }       
     public void addFork(Repo fork) {
-        this.forks.add(fork);
+        this.forksList.add(fork);
     }
     public void addRecentCommit(Commit commit) {
         this.recentCommits.add(commit);
