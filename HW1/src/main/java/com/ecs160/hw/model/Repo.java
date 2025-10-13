@@ -14,6 +14,8 @@ public class Repo {
     private List<Commit> recentCommits;
     private List<Issue> issues;
     private int commitCount; //do we need this we need to calcualte later at some point
+    //TODO add some commit html and issue html
+
 
     public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount) {
         this.name = name;
