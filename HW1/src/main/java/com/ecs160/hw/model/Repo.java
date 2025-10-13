@@ -14,10 +14,11 @@ public class Repo {
     private List<Commit> recentCommits;
     private List<Issue> issues;
     private int commitCount; //do we need this we need to calcualte later at some point
-    //TODO add some commit html and issue html
+    private String commit_html;
+    private String issue_html;
 
 
-    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount) {
+    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount, String commit_html, String issue_html) {
         this.name = name;
         this.owner = new Owner(ownerLogin);
         this.html_url = html_url;
@@ -28,6 +29,8 @@ public class Repo {
         this.recentCommits = new ArrayList<>(50);
         this.issues = new ArrayList<>(10);
         this.commitCount = 0;
+        this.commit_html = commit_html;
+        this.issue_html = issue_html;
     }
 
     public String getName() {
@@ -72,5 +75,11 @@ public class Repo {
     public void addIssue(Issue issue) {
         this.issues.add(issue);
     }  
+    public String getCommitHtml() {
+        return commit_html;
+    }
+    public String getIssueHtml() {
+        return issue_html;
+    }
     
 }
