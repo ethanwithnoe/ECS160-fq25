@@ -1,7 +1,6 @@
 package com.ecs160.hw.util;
 
 import java.util.Optional;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonIOException;
@@ -12,7 +11,7 @@ public class JsonHandler {
     private final Gson gson;
     
     public JsonHandler() {
-        gson = new GsonBuilder().setPrettyPrinting().create();
+        gson = new GsonBuilder().create();
     }
     
     public <T> String parseJson(T object) {
