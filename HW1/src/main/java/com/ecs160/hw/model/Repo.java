@@ -17,9 +17,10 @@ public class Repo {
     private String commit_html;
     private String issue_html;
     private int stargazers_count;
+    private String[] topics;
 
 
-    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount, String commit_html, String issue_html, int stargazers_count) {
+    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount, String commit_html, String issue_html, int stargazers_count, String[] topics ) {
         this.name = name;
         this.owner = new Owner(ownerLogin);
         this.html_url = html_url;
@@ -30,10 +31,16 @@ public class Repo {
         this.recentCommits = new ArrayList<>(50);
         this.issues = new ArrayList<>(10);
         this.commitCount = 0;
+        this.topics = topics;
         this.commit_html = commit_html;
         this.issue_html = issue_html;
         this.stargazers_count = stargazers_count;
     }
+
+    public String[] getTopics() {
+        return topics;
+    }
+
     public int getStargazersCount() {
         return stargazers_count;
     }
