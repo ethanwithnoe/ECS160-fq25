@@ -16,9 +16,10 @@ public class Repo {
     private int commitCount; //do we need this we need to calcualte later at some point
     private String commit_html;
     private String issue_html;
+    private int stargazers_count;
 
 
-    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount, String commit_html, String issue_html) {
+    public Repo(String name, String ownerLogin, String html_url, int forks, String language, int openIssuesCount, String commit_html, String issue_html, int stargazers_count) {
         this.name = name;
         this.owner = new Owner(ownerLogin);
         this.html_url = html_url;
@@ -31,6 +32,10 @@ public class Repo {
         this.commitCount = 0;
         this.commit_html = commit_html;
         this.issue_html = issue_html;
+        this.stargazers_count = stargazers_count;
+    }
+    public int getStargazersCount() {
+        return stargazers_count;
     }
 
     public String getName() {
