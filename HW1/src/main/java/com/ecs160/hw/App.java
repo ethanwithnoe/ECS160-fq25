@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.ecs160.hw.util.GitRepoFetcher;
 import com.ecs160.hw.util.JsonHandler;
 import com.ecs160.hw.model.Repo;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -21,6 +22,12 @@ public class App
         Dotenv dotenv = Dotenv.load();
         String token=dotenv.get("github_API_KEY");
         System.out.println("environment variable: " + token);
+
+        GitRepoFetcher fetcher = new GitRepoFetcher(token);
+        String[] languages   = {"Java", "C", "Python"};
+        for (var element : languages) {
+            
+        }
 
         /*
         APP PLAN
@@ -47,7 +54,7 @@ public class App
         Repo r = j.fromJson(jsonString, Repo.class);
         System.out.println(r);
         System.out.println("Forks: " + r.getForks());
-        //for evry single repor
+        //for evry single repo
         //
 
         

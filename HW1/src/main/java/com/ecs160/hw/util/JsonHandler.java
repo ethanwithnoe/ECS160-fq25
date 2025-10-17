@@ -12,7 +12,7 @@ public class JsonHandler {
     private final Gson gson;
     
     public JsonHandler() {
-        gson = new GsonBuilder().create();
+        gson = new GsonBuilder().setPrettyPrinting().create();
     }
     
     public <T> String parseJson(T object) {
